@@ -18,13 +18,3 @@ dependencies = [
     "streamlit>=1.66.0",
     "streamlit-calendar==1.4.0",
 ]
-
-[dependency-groups]
-dev = [
-    "pytest>=9.1.1",
-]
-
-[tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["tests"]
-markers = ["llm: 실제 OpenAI API를 호출하는 테스트 (-m \"not llm\"으로 제외)"]

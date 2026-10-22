@@ -108,4 +108,3 @@ if __name__ == "__main__":
 
 # 실행 방법 (프로젝트 루트에서, prepare.py 실행 후):
 #   uv run python data/load_db.py
-#   uv run python data/check_db.py

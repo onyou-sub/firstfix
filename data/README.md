@@ -16,7 +16,6 @@
 | `data/processed/` | 컬럼명·값 이름 정리, 정렬한 CSV 5개 (git 제외) |
 | `download.py` | 원본 내려받기 |
 | `prepare.py` | 원본 → processed 변환 |
-| `check_data.py` | processed 검증 (OK / FAIL 출력) |
 
 ## 정리 규칙 (`prepare.py`)
 
@@ -98,5 +97,4 @@
 ```bash
 uv run python data/download.py
 uv run python data/prepare.py
-uv run python data/check_data.py
 ```

@@ -109,4 +109,3 @@ if __name__ == "__main__":
 # 실행 순서 (프로젝트 루트에서):
 #   1. uv run python data/virtual/make_virtual.py
 #   2. uv run python data/virtual/build_index.py    # .env에 OPENAI_API_KEY 필요
-#   3. uv run python data/virtual/check_virtual.py
