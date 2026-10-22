@@ -1,0 +1,30 @@
+[project]
+name = "fixfirst"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "kaggle>=2.2.4",
+    "langchain>=1.4.6",
+    "langchain-chroma>=1.1.0",
+    "langchain-openai>=1.7.2",
+    "langgraph-checkpoint-sqlite>=3.1.2",
+    "lightgbm>=4.7.0",
+    "pandas>=3.0.6",
+    "plotly>=7.1.0",
+    "pyarrow>=26.0.0",
+    "python-dotenv>=1.2.4",
+    "scikit-learn>=1.9.1",
+    "streamlit>=1.66.0",
+    "streamlit-calendar==1.4.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = ["llm: 실제 OpenAI API를 호출하는 테스트 (-m \"not llm\"으로 제외)"]

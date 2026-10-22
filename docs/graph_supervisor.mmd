@@ -1,0 +1,30 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	model(model)
+	tools(tools)
+	input_guard\2ebefore_model(input_guard.before_model)
+	HumanInTheLoopMiddleware\2eafter_model(HumanInTheLoopMiddleware.after_model)
+	SummarizationMiddleware\2ebefore_model(SummarizationMiddleware.before_model)
+	ModelCallLimitMiddleware\2ebefore_model(ModelCallLimitMiddleware.before_model)
+	ModelCallLimitMiddleware\2eafter_model(ModelCallLimitMiddleware.after_model)
+	__end__([<p>__end__</p>]):::last
+	HumanInTheLoopMiddleware\2eafter_model -.-> __end__;
+	HumanInTheLoopMiddleware\2eafter_model -.-> input_guard\2ebefore_model;
+	HumanInTheLoopMiddleware\2eafter_model -.-> tools;
+	ModelCallLimitMiddleware\2eafter_model --> HumanInTheLoopMiddleware\2eafter_model;
+	ModelCallLimitMiddleware\2ebefore_model -.-> __end__;
+	ModelCallLimitMiddleware\2ebefore_model -.-> model;
+	SummarizationMiddleware\2ebefore_model --> ModelCallLimitMiddleware\2ebefore_model;
+	__start__ --> input_guard\2ebefore_model;
+	input_guard\2ebefore_model -.-> SummarizationMiddleware\2ebefore_model;
+	input_guard\2ebefore_model -.-> __end__;
+	model --> ModelCallLimitMiddleware\2eafter_model;
+	tools -.-> input_guard\2ebefore_model;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

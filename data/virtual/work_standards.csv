@@ -1,0 +1,7 @@
+﻿task_type,comp,duration_min,skill
+replace,motor,120,전기
+replace,drive,180,기계
+replace,pump,120,유체
+replace,bearing,90,기계
+sensor_check,,60,공통
+temporary_check,,60,공통
